@@ -12,8 +12,13 @@
 PROJECT_NAME="Cute Hamster"
 VERSION="0.0.1"
 ENVIRONMENT="dev"
+
+DATABASE_URL="sqlite:////etc/server_storage/cutehamster_storage.db"
+BASE_DIR="/etc/server_storage"
 ```
-2. ENVIRONMENT만 제외하고 아무 영향없다. 사실 ENVIRONMENT도 아직까지 API 문서를 보여줄지 말지만 결정한다.
+- **ENVIRONMENT**: 서버 환경, 아직 dev, test, prod에 따라 다른 설정은 없고 스웨거 활성화 여부만 달라진다.
+- **DATABASE_URL**: 서버 DB 위치 현재 SQLite를 사용하고 있다. SQLite므로 로컬 파일 위치를 지정하면 된다.
+- **BASE_DIR**: 서버에서 파일을 저장할 루트 폴더 위치
 ## 서버 실행
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 
