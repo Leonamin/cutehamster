@@ -25,8 +25,8 @@ async def get_file(access_key: str):
 @router.post("", response_model=FileCreateResponse)
 async def create_file(
     file: UploadFile = File(),
-    base_dir: str = config.settings.BASE_DIR
 ):
+    base_dir: str = config.settings.BASE_DIR
     # 파일 저장
     file_path, file_uuid, file_extension = service.save_file(file, base_dir)
 
